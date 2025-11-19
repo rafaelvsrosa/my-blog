@@ -1,6 +1,6 @@
 import { postRepository } from "@/repositories/post";
 import { PosterCoverImage } from "../PostCoverImage";
-import { PostHeading } from "../PostHeading";
+import { PostSummary } from "../PostSummary";
 
 export async function PostsList() {
   const posts = await postRepository.findAll();
@@ -14,7 +14,7 @@ export async function PostsList() {
           <div className="flex flex-col gap-4 group" key={post.id}>
             <PosterCoverImage
               linkProps={{
-                href: postLink
+                href: postLink,
               }}
               imageProps={{
                 width: 1200,
@@ -24,20 +24,13 @@ export async function PostsList() {
               }}
             />
 
-            <div className="flex flex-col gap-4 sm:justify-center">
-              <time
-                className="text-slate-600 block text-sm/tight"
-                dateTime={post.createdAt}
-              >
-                {post.createdAt}
-              </time>
-
-              <PostHeading as="h2" url={postLink}>
-                {post.title}
-              </PostHeading>
-
-              <p>{post.excerpt}</p>
-            </div>
+            <PostSummary
+              postLink={postLink}
+              postHeading="h2"
+              createdAt={post.createdAt}
+              excerpt={post.excerpt}
+              title={post.title}
+            />
           </div>
         );
       })}
