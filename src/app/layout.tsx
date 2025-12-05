@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description: "aqui é a descrição",
 };
 
+
 type RootLayoutProps = {
   children: React.ReactNode;
 };

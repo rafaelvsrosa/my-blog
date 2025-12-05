@@ -2,12 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 
-type PostCoverImage = {
+type PostCoverImageProps = {
   imageProps: React.ComponentProps<typeof Image>;
   linkProps: React.ComponentProps<typeof Link>;
 };
 
-export function PosterCoverImage({ imageProps, linkProps }: PostCoverImage) {
+export function PosterCoverImage({ imageProps, linkProps }: PostCoverImageProps) {
   return (
     <Link
       {...linkProps}
@@ -18,7 +18,6 @@ export function PosterCoverImage({ imageProps, linkProps }: PostCoverImage) {
         "rounded-xl",
         linkProps.className
       )}
-      href="#"
     >
       <Image
         {...imageProps}

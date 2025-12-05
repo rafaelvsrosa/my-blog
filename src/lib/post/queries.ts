@@ -16,5 +16,4 @@ if (!post) notFound()
 });
 
 export const findPostByIdCached = cache(
-  async (id: string) => await postRepository.findById(id)
-);
+  async (id: string) => await postRepository.findById(id),);
