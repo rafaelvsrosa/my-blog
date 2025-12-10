@@ -15,10 +15,10 @@ export async function SinglePost({ slug }: SinglePostProps) {
     <article className="mb-16">
       <header className="group flex flex-col gap-4 mb-4">
         <Image
-          className="rounded-xl"
+          className="rounded-xl mb-7"
           src={post.coverImageUrl}
-          width={700}
-          height={520}
+          width={600}
+          height={420}
           alt={post.title}
         />
 

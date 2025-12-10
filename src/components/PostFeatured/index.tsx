@@ -15,8 +15,8 @@ export async function PostFeatured() {
           href: postLink,
         }}
         imageProps={{
-          width: 1200,
-          height: 1200,
+          width: 600,
+          height: 420,
           src: post.coverImageUrl,
           alt: post.title,
           priority: true,
