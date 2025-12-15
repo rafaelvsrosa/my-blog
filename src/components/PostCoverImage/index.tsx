@@ -19,6 +19,7 @@ export function PosterCoverImage({ imageProps, linkProps }: PostCoverImageProps)
         linkProps.className
       )}
     >
+      
       <Image
         {...imageProps}
         className={clsx(
