@@ -15,7 +15,7 @@ export default function ErrorMessage({
 }: ErrorMessageProps) {
   return (
     <>
-      <title>{pageTitle}</title>
+      {pageTitle && <title>{pageTitle}</title>}
       <div
         className={clsx(
           "min-h-80 bg-slate-100 text-slate-900",
@@ -26,9 +26,7 @@ export default function ErrorMessage({
       >
         <div>
           <h1 className="text-7xl/tight mb-5 font-extrabold">{contentTitle}</h1>
-          <div>
-            {content}
-          </div>
+          <div>{content}</div>
         </div>
       </div>
     </>
